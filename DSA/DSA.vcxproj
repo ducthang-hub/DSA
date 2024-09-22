@@ -155,9 +155,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DSA.cpp" />
+    <ClCompile Include="General\kth_largest.cpp" />
+    <ClCompile Include="Heap\MinHeap\min_heap.cpp" />
+    <ClCompile Include="LinkedList\linked_list.cpp" />
+    <ClCompile Include="Tree\AVL Tree\avl_tree.cpp" />
+    <ClCompile Include="Tree\Binary Tree\leet_code.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="General\kth_largest.h" />
+    <ClInclude Include="Heap\MinHeap\min_heap.h" />
+    <ClInclude Include="LinkedList\linked_list.h" />
+    <ClInclude Include="Node\node.h" />
+    <ClInclude Include="Queue\c_queue.h" />
     <ClInclude Include="String\c_string.h" />
+    <ClInclude Include="Tree\AVL Tree\avl_tree.h" />
+    <ClInclude Include="Tree\Binary Tree\binary_tree.h" />
+    <ClInclude Include="Tree\Binary Tree\leet_code.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
