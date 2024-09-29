@@ -7,6 +7,8 @@
 #include "LinkedList/linked_list.h"
 #include "General/kth_largest.h"
 #include "Heap/MinHeap/min_heap.h"
+#include "Sorting/quick_sort.h"
+
 
 const int number_of_char = 26;
 
@@ -73,8 +75,9 @@ void linked_list_implementation()
     list->reverse_by_sliding_pointer();
     list->print_linked_list();
 }
-
 #pragma
+
+#pragma heap
 void heap_implementation()
 {
     int *a = new int[]{3,2,1,5,6,4};
@@ -84,16 +87,50 @@ void heap_implementation()
     printf("%d largest: %d", kth_largest, min_heap->peek());
 }
 
+#pragma quick_sort
+void quick_sort_implementation()
+{
+    auto arr = new int[]{12,4,35,3,53,53,8,5,43,767};
+    int length = 10;
+    
+    // quick sort
+    quick_sort::sort(arr, length);
+    for(int i =0;i<length;i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // select kth largest item - quick selection
+    // printf("%d", quick_sort::select_kth_largest(arr, 6, 3));
+}
+
 void test()
 {
-    vector<int> nums{4,5,8,2};
-    kth_largest *kth_largest = new class kth_largest(nums, 3);
-    printf("%d\n", kth_largest->add(3));
-    printf("%d\n", kth_largest->add(5));
-    printf("%d\n", kth_largest->add(10));
-    printf("%d\n", kth_largest->add(9));
-    printf("%d\n", kth_largest->add(4));
+    // vector<int> nums{4,5,8,2};
+    // kth_largest *kth_largest = new class kth_largest(nums, 3);
+    // printf("%d\n", kth_largest->add(3));
+    // printf("%d\n", kth_largest->add(5));
+    // printf("%d\n", kth_largest->add(10));
+    // printf("%d\n", kth_largest->add(9));
+    // printf("%d\n", kth_largest->add(4));
+
+    int numRows = 4;
+    vector<vector<int>> result;
+    for(int i =1;i<=numRows; i++){
+        vector<int> row;
+        for(int j=0;j<i;j++){
+            if(j==0 || j==i-1 || i==1){
+                row.push_back(1);
+            }else{
+                row.push_back(result[i-2][j-1] + result[i-2][j]);
+            }
+        }
+        result.push_back(row);
+    }
+    
 }
+
+
 
 int main(int argc, char* argv[])
 {
@@ -102,6 +139,6 @@ int main(int argc, char* argv[])
     // tree_implementation();
     // linked_list_implementation();
     // heap_implementation();
-    
+    // quick_sort_implementation();
     return 0;
 }

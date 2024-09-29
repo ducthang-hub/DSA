@@ -158,6 +158,7 @@
     <ClCompile Include="General\kth_largest.cpp" />
     <ClCompile Include="Heap\MinHeap\min_heap.cpp" />
     <ClCompile Include="LinkedList\linked_list.cpp" />
+    <ClCompile Include="Sorting\quick_sort.cpp" />
     <ClCompile Include="Tree\AVL Tree\avl_tree.cpp" />
     <ClCompile Include="Tree\Binary Tree\leet_code.cpp" />
   </ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="LinkedList\linked_list.h" />
     <ClInclude Include="Node\node.h" />
     <ClInclude Include="Queue\c_queue.h" />
+    <ClInclude Include="Sorting\quick_sort.h" />
     <ClInclude Include="String\c_string.h" />
     <ClInclude Include="Tree\AVL Tree\avl_tree.h" />
     <ClInclude Include="Tree\Binary Tree\binary_tree.h" />
