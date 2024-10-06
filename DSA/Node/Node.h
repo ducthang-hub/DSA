@@ -4,10 +4,10 @@
 
 using namespace std;
 
-class node
+class Node
 {
 private:
-    static void print_bt(const std::string& prefix, const node* node, const bool is_left)
+    static void print_bt(const std::string& prefix, const Node* node, const bool is_left)
     {
         SetConsoleOutputCP(CP_UTF8);
         std::ios::sync_with_stdio(false); 
@@ -20,18 +20,18 @@ private:
             std::cout << (is_left ? "├──" : "└──" );
 
             // print the value of the node
-            std::cout << node->data << std::endl;
+            std::cout << node->val << std::endl;
 
             // enter the next tree level - left and right branch
-            print_bt( prefix + (is_left ? "│   " : "    "), node->lchild, true);
-            print_bt( prefix + (is_left ? "│   " : "    "), node->rchild, false);
+            print_bt( prefix + (is_left ? "│   " : "    "), node->left, true);
+            print_bt( prefix + (is_left ? "│   " : "    "), node->right, false);
         }
     }
 public:
-    node* lchild;
-    node* rchild;
-    node* next;
-    int data;
+    Node* left;
+    Node* right;
+    Node* next;
+    int val;
     int height;
 
     void print_bt() const

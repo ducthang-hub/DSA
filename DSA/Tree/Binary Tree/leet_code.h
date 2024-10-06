@@ -1,5 +1,7 @@
 ﻿#pragma once
+#include <stack>
 #include <vector>
+#include "../../Node/Node.h"
 
 using namespace std;
 
@@ -18,5 +20,48 @@ public:
         }
 
         return sum_nums - sum;
+    }
+
+    static bool find_target(Node* root, int k)
+    {
+        if(root == nullptr) return false;
+
+        stack<Node*> stack;
+        stack.push(root);
+        vector<int> hash_array;
+        vector<bool> visitedNode;
+        
+        while(!stack.empty())
+        {
+            Node* node = stack.top();
+            update_hash_array(hash_array, node->val, k);
+            if(node->left != nullptr)
+            {
+                stack.push(node->left);
+                visitedNode.push_back(node->val);
+                continue;
+            }
+            if(node->right != nullptr)
+            {
+                stack.push(node->right);
+                visitedNode.push_back(node->val);
+                continue;
+            }
+            node = nullptr;
+            stack.pop();
+        }
+    }
+
+    static void update_hash_array(vector<int> &vector, int k, int target)
+    {
+        for(int i =0;i<vector.size();i++)
+        {
+            if(vector[i] + k == target)
+            {
+                vector[i] = target;
+                return;
+            }
+        }
+        vector.push_back(k);
     }
 };

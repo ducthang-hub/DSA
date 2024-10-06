@@ -1,6 +1,6 @@
 #include <cstdio>
 #include "String/c_string.h"
-#include "Node/node.h"
+#include "Node/Node.h"
 #include "Tree/Binary Tree/binary_tree.h"
 #include <windows.h>
 #include "Tree/Binary Tree/leet_code.h"
@@ -42,7 +42,7 @@ void string_implement()
 }
 
 #pragma tree_implementation
-static void print_bt(const std::string& prefix, const node* node, const bool is_left)
+static void print_bt(const std::string& prefix, const Node* node, const bool is_left)
 {
     SetConsoleOutputCP(CP_UTF8);
     if( node != nullptr )
@@ -51,19 +51,28 @@ static void print_bt(const std::string& prefix, const node* node, const bool is_
         std::cout << (is_left ? "├──" : "└──" );
 
         // print the value of the node
-        std::cout << node->data << std::endl;
+        std::cout << node->val << std::endl;
 
         // enter the next tree level - left and right branch
-        print_bt( prefix + (is_left ? "│   " : "    "), node->lchild, true);
-        print_bt( prefix + (is_left ? "│   " : "    "), node->rchild, false);
+        print_bt( prefix + (is_left ? "│   " : "    "), node->left, true);
+        print_bt( prefix + (is_left ? "│   " : "    "), node->right, false);
     }
 }
 void tree_implementation()
 {
-    int a[7] = {10, 7, 6, 8, 14, 12, 15};
+    int a[7] = {5,3,2,4,6,7};
+    int b[2] = {1,2};
     const auto tree = new binary_tree;
-    tree->create_tree_by_preorder(a, 7);
-    print_bt("", tree->root, false);
+    // tree->create_tree();
+    // tree->create_tree_by_preorder(a, 6);
+    // vector<int> inorder;
+    // tree->inorder_plain(inorder, tree->root);
+    // for (auto n : inorder)
+    // {
+    //     printf("%d ", n);
+    // }
+    unordered_set<int> set;
+    printf("%d", set.end());
 }
 
 
@@ -75,7 +84,6 @@ void linked_list_implementation()
     list->reverse_by_sliding_pointer();
     list->print_linked_list();
 }
-#pragma
 
 #pragma heap
 void heap_implementation()
@@ -134,9 +142,9 @@ void test()
 
 int main(int argc, char* argv[])
 {
-    test();
+    // test();
     // string_implement();
-    // tree_implementation();
+    tree_implementation();
     // linked_list_implementation();
     // heap_implementation();
     // quick_sort_implementation();

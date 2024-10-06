@@ -213,4 +213,22 @@ public:
 
         return true;
     }
+
+    //https://leetcode.com/problems/is-subsequence/description/
+    static bool isSubsequence(string s, string t)
+    {
+        int lengthS = s.length();
+        int lengthT = t.length();
+
+        if(lengthS > lengthT) return false;
+
+        int count = 0;
+        for(int i = 0;i<lengthT; i++)
+        {
+            if(t[i] == s[count]) count++;
+        }
+
+        return lengthS == count;
+    }
+
 };

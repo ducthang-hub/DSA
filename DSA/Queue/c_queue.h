@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../Node/node.h"
+#include "../Node/Node.h"
 
 using namespace std;
 
@@ -7,21 +7,21 @@ class c_queue{
     int size_;
     int front_;
     int rear_;
-    node** q_;  // [Node*]*: Pointer to [Pointer to Node]
+    Node** q_;  // [Node*]*: Pointer to [Pointer to Node]
 public:
     explicit c_queue(int size);
     ~c_queue();
     bool is_full() const;
     bool is_empty() const;
-    void enqueue(node* x);
-    node* dequeue();
+    void enqueue(Node* x);
+    Node* dequeue();
 };
 
 inline c_queue::c_queue(const int size) {
     this->size_ = size;
     front_ = -1;
     rear_ = -1;
-    q_ = new node* [size];
+    q_ = new Node* [size];
 }
 
 inline c_queue::~c_queue() {
@@ -44,7 +44,7 @@ inline bool c_queue::is_full() const
     return false;
 }
 
-inline void c_queue::enqueue(node* x) {
+inline void c_queue::enqueue(Node* x) {
     if (is_full()){
         cout << "Queue Overflow" << flush;
     } else {
@@ -53,8 +53,8 @@ inline void c_queue::enqueue(node* x) {
     }
 }
 
-inline node* c_queue::dequeue() {
-    node* x = nullptr;
+inline Node* c_queue::dequeue() {
+    Node* x = nullptr;
     if (is_empty()){
         cout << "Queue Underflow" << flush;
     } else {

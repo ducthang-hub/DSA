@@ -1,34 +1,34 @@
 ﻿#pragma once
 #include <stdio.h>
-#include "../Node/node.h"
+#include "../Node/Node.h"
 
 using namespace std;
 
 class linked_list
 {
 public:
-    node* head;
+    Node* head;
     void reverse_by_sliding_pointer();
     void print_linked_list();
     
     explicit linked_list(const int data)
     {
-        head = static_cast<node*>(malloc(sizeof(node)));
-        head->data = data;
+        head = static_cast<Node*>(malloc(sizeof(Node)));
+        head->val = data;
         head->next = nullptr;
     }
 
     
     explicit linked_list(const int data[], int length)
     {
-        head = static_cast<node*>(malloc(sizeof(node)));
-        head->data = data[0];
+        head = static_cast<Node*>(malloc(sizeof(Node)));
+        head->val = data[0];
         auto iterate = head;
         
         for(int i = 1;i<length; i++)
         {
-            auto n = static_cast<node*>(malloc(sizeof(node)));
-            n->data = data[i];
+            auto n = static_cast<Node*>(malloc(sizeof(Node)));
+            n->val = data[i];
             n->next = nullptr;
             iterate->next = n;
             iterate = iterate->next;
@@ -38,10 +38,10 @@ public:
     
     ~linked_list()
     {
-        const node* iterate = head;
+        const Node* iterate = head;
         while(iterate != nullptr)
         {
-            const node* temp = iterate->next;
+            const Node* temp = iterate->next;
             delete iterate;
             iterate = temp;
         }
@@ -50,9 +50,9 @@ public:
 
 inline void linked_list::reverse_by_sliding_pointer()
 {
-    node* previous = nullptr;
-    node* current = head;
-    node* next = head->next;
+    Node* previous = nullptr;
+    Node* current = head;
+    Node* next = head->next;
 
     while(current != nullptr)
     {
@@ -68,7 +68,7 @@ inline void linked_list::print_linked_list()
 {
     while(head!= nullptr)
     {
-        printf("%d ", head->data);
+        printf("%d ", head->val);
         head = head->next;
     }
 }

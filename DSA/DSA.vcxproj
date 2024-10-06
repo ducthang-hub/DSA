@@ -160,13 +160,12 @@
     <ClCompile Include="LinkedList\linked_list.cpp" />
     <ClCompile Include="Sorting\quick_sort.cpp" />
     <ClCompile Include="Tree\AVL Tree\avl_tree.cpp" />
-    <ClCompile Include="Tree\Binary Tree\leet_code.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General\kth_largest.h" />
     <ClInclude Include="Heap\MinHeap\min_heap.h" />
     <ClInclude Include="LinkedList\linked_list.h" />
-    <ClInclude Include="Node\node.h" />
+    <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Queue\c_queue.h" />
     <ClInclude Include="Sorting\quick_sort.h" />
     <ClInclude Include="String\c_string.h" />
