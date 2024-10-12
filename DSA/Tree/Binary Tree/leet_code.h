@@ -64,4 +64,66 @@ public:
         }
         vector.push_back(k);
     }
+
+    static bool validPalindrome(string s) {
+        if(s.length() == 0) return true;
+
+        int i =0;
+        int j = s.length()-1;
+        int count = 0;
+        
+        while(i<j){
+            if(s[i] == s[j]) {
+                // printf("%c - %c\n", s[i], s[j]);
+                i++;
+                j--;
+            }
+            else {
+                printf("%d.%c - %d.%c\n", i, s[i], j, s[j]);
+                if(s[i+1] == s[j]){
+                // printf("%d.%c - %d.%c\n", i, s[i], j, s[j]);
+                    i++;
+                    count++;
+                }
+                else if (s[i]==s[j-1]){
+                    // printf("%c - %c\n", s[i], s[j-1]);
+                    j--;
+                    count++;
+                }
+                else{
+                    // printf("%c - %c\n", s[i], s[j-1]);
+                    j--;
+                    count++;
+                }
+            }
+        }
+        
+        if(count < 2) return true;
+
+        return false;
+    }
+
+    void sortColors(vector<int>& nums) {
+        int size = nums.size();
+        for(int i =0;i<size;i++){
+            for(int j =0;j<size-i-1;j++){
+                if(nums[j]<nums[j+1]){
+                    int temp = nums[j];
+                    nums[j]= nums[j+1];
+                    nums[j+1]= nums[j];
+                }
+            }
+        }
+    }
+
+    Node* buildTree(vector<int>& preorder, vector<int>& inorder)
+    {
+        auto root = static_cast<Node*>(malloc(sizeof(Node)));
+        root->val = preorder[0];
+
+        for(int i = 1;i<preorder.size();i++)
+        {
+            
+        }
+    }
 };

@@ -155,13 +155,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DSA.cpp" />
-    <ClCompile Include="General\kth_largest.cpp" />
     <ClCompile Include="Heap\MinHeap\min_heap.cpp" />
     <ClCompile Include="LinkedList\linked_list.cpp" />
     <ClCompile Include="Sorting\quick_sort.cpp" />
     <ClCompile Include="Tree\AVL Tree\avl_tree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="General\binary_tree_paths.h" />
     <ClInclude Include="General\kth_largest.h" />
     <ClInclude Include="Heap\MinHeap\min_heap.h" />
     <ClInclude Include="LinkedList\linked_list.h" />

@@ -112,6 +112,18 @@ void quick_sort_implementation()
     // printf("%d", quick_sort::select_kth_largest(arr, 6, 3));
 }
 
+#pragma
+void general_leetcode()
+{
+    auto leetcode = new leet_code;
+    vector<int> nums{2,0,2,1,1,0};
+    leetcode->sortColors(nums);
+    for(int i =0;i<nums.size();i++)
+    {
+        printf("%d -", nums[i]);
+    }
+}
+
 void test()
 {
     // vector<int> nums{4,5,8,2};
@@ -144,9 +156,10 @@ int main(int argc, char* argv[])
 {
     // test();
     // string_implement();
-    tree_implementation();
+    // tree_implementation();
     // linked_list_implementation();
     // heap_implementation();
     // quick_sort_implementation();
+    general_leetcode();
     return 0;
 }
