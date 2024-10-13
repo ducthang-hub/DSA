@@ -6,8 +6,11 @@
 
 class binary_tree_paths
 {
+private:
+    static void binaryTreePathsRecursive(Node* root, string path, vector<string> &result);
 public:
     static vector<string> binaryTreePaths(Node* root);
+    static vector<string> binaryTreePathsRecursive(Node* root);
 };
 
 //https://leetcode.com/problems/binary-tree-paths/description/
@@ -41,4 +44,32 @@ inline vector<string> binary_tree_paths::binaryTreePaths(Node* root)
 
     return result;
 }
+
+inline vector<string> binary_tree_paths::binaryTreePathsRecursive(Node* root)
+{
+    vector<string> result;
+    binaryTreePathsRecursive(root, "", result);
+    return result;
+}
+
+
+inline vector<string> binary_tree_paths::binaryTreePathsRecursive(Node* root, string path, vector<string> result)
+{
+    if(root->left == nullptr || root->right == nullptr)
+    {
+        result.push_back(path + root->val);
+    }
+    else
+    {
+        if(root->left != nullptr)
+        {
+            binaryTreePathsRecursive(root->left, path+root->val, result);
+        }
+        if(root->right != nullptr)
+        {
+            binaryTreePathsRecursive(root->right, path+root->val, result);
+        }
+    }
+}
+
 

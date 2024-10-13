@@ -8,6 +8,7 @@
 #include "General/kth_largest.h"
 #include "Heap/MinHeap/min_heap.h"
 #include "Sorting/quick_sort.h"
+#include "General/letter_combinations_of_phonenumber.h"
 
 
 const int number_of_char = 26;
@@ -115,14 +116,15 @@ void quick_sort_implementation()
 #pragma
 void general_leetcode()
 {
-    auto leetcode = new leet_code;
-    vector<int> nums{2,0,2,1,1,0};
-    leetcode->sortColors(nums);
-    for(int i =0;i<nums.size();i++)
+    letter_combinations_of_phonenumber leet;
+    string digits = "22";
+    auto paths = leet.letterCombinations(digits);
+    for(auto i : paths)
     {
-        printf("%d -", nums[i]);
+        printf("%s - ", i);
     }
 }
+
 
 void test()
 {

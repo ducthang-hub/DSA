@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DSA.cpp" />
+    <ClCompile Include="General\letter_combinations_of_phonenumber.cpp" />
     <ClCompile Include="Heap\MinHeap\min_heap.cpp" />
     <ClCompile Include="LinkedList\linked_list.cpp" />
     <ClCompile Include="Sorting\quick_sort.cpp" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="General\binary_tree_paths.h" />
     <ClInclude Include="General\kth_largest.h" />
+    <ClInclude Include="General\letter_combinations_of_phonenumber.h" />
     <ClInclude Include="Heap\MinHeap\min_heap.h" />
     <ClInclude Include="LinkedList\linked_list.h" />
     <ClInclude Include="Node\Node.h" />
