@@ -231,4 +231,37 @@ public:
         return lengthS == count;
     }
 
+    static vector<string> find_words(vector<string> words)
+    {
+        vector<string> dic = {"qwertyuiopQWERTYUIOP", "asdfghjklASDFGHJKL", "zxcvbnmZXCVBNM"};
+        vector<string> result;
+        
+        for (auto word : words)
+        {
+            int i =0;
+            for(;i<dic.size();i++)
+            {
+                if(dic[i].find_first_of(word[0]) != string::npos)
+                {
+                    break;
+                }
+            }
+
+            bool isSameRow = true;
+            for (auto c : word)
+            {
+                if(dic[i].find_first_of(c) == string::npos)
+                {
+                    isSameRow = false;
+                    break;
+                }
+            }
+
+            if(isSameRow) result.push_back(word);
+        }
+
+        return result;
+        
+    }
+
 };

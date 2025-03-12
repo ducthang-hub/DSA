@@ -34,7 +34,6 @@ public:
             iterate = iterate->next;
         }
     }
-
     
     ~linked_list()
     {
