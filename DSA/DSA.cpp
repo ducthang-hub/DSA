@@ -116,13 +116,9 @@ void quick_sort_implementation()
 #pragma
 void general_leetcode()
 {
-    letter_combinations_of_phonenumber leet;
-    string digits = "22";
-    auto paths = leet.letterCombinations(digits);
-    for(auto i : paths)
-    {
-        printf("%s - ", i);
-    }
+    c_string cstring;
+    string s = "bbbb";
+    cstring.length_of_longest_substring(s);
 }
 
 

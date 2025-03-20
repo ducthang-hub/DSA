@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include <cstdio>
 #include <string>
+#include <unordered_set>
 #include <vector>
 using namespace std;
 
-class c_string
+static class c_string
 {
 public:
     static int string_length(const char *str)
@@ -264,4 +265,39 @@ public:
         
     }
 
+    //https://leetcode.com/problems/longest-substring-without-repeating-characters/
+    static int length_of_longest_substring(string s)
+    {
+        int length = s.length();
+        int left = 0;
+        int longest = 0;
+        int* seen = (int*)calloc(256, sizeof(int));
+
+        for(int right = 0;right<length;right++)
+        {
+            if(seen[s[right]] == 0)
+            {
+                seen[s[right]] = 1;
+            }
+            else
+            {
+                while(seen[s[right]] == 1)
+                {
+                    seen[s[left]] = 0;
+                    left++;
+                }
+                seen[s[right]] = 1;
+            }
+
+            longest = max(longest, right - left + 1);
+        }
+
+        return longest;
+    }
+
+    static void run()
+    {
+        string s = "abcabcd";
+        length_of_longest_substring(s);
+    }
 };
